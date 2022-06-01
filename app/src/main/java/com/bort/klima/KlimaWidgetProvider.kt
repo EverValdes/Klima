@@ -17,7 +17,7 @@ class KlimaWidgetProvider: AppWidgetProvider() {
             val intent = Intent(context, MainActivity::class.java)
             val pendingIntent = PendingIntent.getActivity(context, 0 , intent, 0)
             val remoteView = RemoteViews(context?.packageName, R.layout.widget_klima)
-
+            remoteView.setOnClickPendingIntent(R.id.image_animation, pendingIntent)
             appWidgetManager?.updateAppWidget(appWidgetId, remoteView)
         }
     }
